@@ -3,15 +3,15 @@
 import argparse
 
 def find_max_profit(prices):
-    profit = min(prices) - max(prices)
-    return profit
+    #iterating through list searching for the lowest number
+    #except for the last one to set as "buy"
+    for i in range(0, len(prices[:-1])):
+        # find the smallest number and assigned that location to buy and
+        # slice from "buy" to rest of the number
+        if prices[i] == min(prices[:-1]):
+            #then subtract sell(max) from buy(min)
+            return max(prices[i+1:]) - min(prices[:-1])
 
-    # Buy = int
-    # Sell = int
-    # Selling = list
-    # for i in range(0, len(prices)):
-    #     if i <= prices[i]:
-    #         Buy = prices[i]
 
 #prices = [1050, 270, 1540, 3800, 2]
 
@@ -41,6 +41,8 @@ def find_max_profit(prices):
 # When comparing the 1st number against the 2nd number, if it is lower, replace, if next number is greater than 
 # min() = grab the smallest number
 # max() = grab the largest number
+# Sell can only persist after buy is assigned
+# Buy can be any integer except the last one
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
