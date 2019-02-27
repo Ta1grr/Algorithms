@@ -13,7 +13,7 @@ def find_max_profit(prices):
             return max(prices[i+1:]) - min(prices[:-1])
 
 
-#prices = [1050, 270, 1540, 3800, 2]
+prices = [1050, 270, 1540, 3800, 2]
 
 #Understanding the problem
 # You can only buy once, then sell only at the largest profit.
